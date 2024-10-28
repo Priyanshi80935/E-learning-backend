@@ -1,5 +1,8 @@
 package com.tech.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,4 +23,5 @@ public class CourseDTO {
     private int noOfStudents;
     private String lecture;
     private int ratingCount;
+    List<ModuleDTO> modules = new ArrayList<>();
 }
