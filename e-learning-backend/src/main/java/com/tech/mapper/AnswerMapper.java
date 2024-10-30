@@ -12,7 +12,7 @@ public class AnswerMapper {
         AnswerDTO answerDTO = new AnswerDTO();
         answerDTO.setId(answer.getId());
         answerDTO.setContent(answer.getContent());
-        answerDTO.setCorrect(answer.isCorrect());
+        answerDTO.setCorrect(answer.getCorrect());
         return answerDTO;
     }
 
@@ -21,7 +21,7 @@ public class AnswerMapper {
         Answer answer = new Answer();
         answer.setId(answerDTO.getId());
         answer.setContent(answerDTO.getContent());
-        answer.setCorrect(answerDTO.isCorrect());
+        answer.setCorrect(answerDTO.getCorrect());
         return answer;
     }
 }

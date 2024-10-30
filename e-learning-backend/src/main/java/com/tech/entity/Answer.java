@@ -21,7 +21,7 @@ public class Answer {
 
     private String content; // The text of the answer
 
-    private boolean correct; // Indicates if this answer is correct
+    private Boolean correct; // Indicates if this answer is correct
 
     @ManyToOne
     @JoinColumn(name = "question_id") // Foreign key linking answer to question
