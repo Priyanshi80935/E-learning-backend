@@ -21,7 +21,8 @@ public class CourseDTO {
     private String img;
     private String duration;
     private int noOfStudents;
-    private String lecture;
+    private Long lectureId;
+    private String lectureName;
     private int ratingCount;
     List<ModuleDTO> modules = new ArrayList<>();
 }

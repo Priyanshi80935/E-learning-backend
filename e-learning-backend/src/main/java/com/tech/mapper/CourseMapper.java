@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.tech.dto.CourseDTO;
 import com.tech.dto.ModuleDTO;
 import com.tech.entity.Course;
+import com.tech.entity.Lecture;
 import com.tech.entity.ModuleEntity;
 
 @Component //Springboot will crearte a object
@@ -23,7 +24,10 @@ public class CourseMapper {
 		courseDTO.setDescription(course.getDescription());
 		courseDTO.setDuration(course.getDescription());
 		courseDTO.setImg(course.getImg());
-		courseDTO.setLecture(course.getLecture());
+		if(course.getLecture() != null) {
+			courseDTO.setLectureId(course.getLecture().getId());
+			courseDTO.setLectureName(course.getLecture().getName());
+		}
 		courseDTO.setNoOfStudents(course.getNoOfStudents());
 		courseDTO.setPrice(course.getPrice());
 		courseDTO.setRatingCount(course.getRatingCount());
@@ -49,7 +53,13 @@ public class CourseMapper {
 		course.setDescription(courseDTO.getDescription());
 		course.setDuration(courseDTO.getDescription());
 		course.setImg(courseDTO.getImg());
-		course.setLecture(courseDTO.getLecture());
+		if(courseDTO.getLectureId() != null) {
+			Long lectureId = courseDTO.getLectureId();
+			Lecture lecture = new Lecture();
+			lecture.setId(lectureId);
+			course.setLecture(lecture);
+		}
+		
 		course.setNoOfStudents(courseDTO.getNoOfStudents());
 		course.setPrice(courseDTO.getPrice());
 		course.setRatingCount(courseDTO.getRatingCount());
