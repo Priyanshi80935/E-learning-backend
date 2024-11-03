@@ -45,4 +45,18 @@ public class CourseService {
 		return courseDTOs;
 
 	}
+
+	public List<CourseDTO> myCourse() {
+		List<Course> all = courseRepository.findAll();
+		List<CourseDTO> courseDTOs = new ArrayList<>();
+		for (Course course : all) {
+			courseDTOs.add(courseMapper.toDTO(course));
+		}
+		return courseDTOs;
+	}
+
+	public CourseDTO findById(Long courseId) {
+		Course course = courseRepository.findById(courseId).get();
+		return courseMapper.toDTO(course);
+	}
 }

@@ -12,5 +12,9 @@ import lombok.Setter;
 public class VideoDTO {
 	private Long id;
     private String name;
-    private ModuleDTO moduleDTO;
+    private Long courseId;
+    private Long moduleId;
+    private String content;
+    private Long videoNumber;
+    private String description;
 }

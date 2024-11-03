@@ -3,11 +3,7 @@ package com.tech.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.tech.dto.CourseDTO;
 import com.tech.service.CourseService;
@@ -31,5 +27,15 @@ public class CourseController {
 	@GetMapping("top-course")
 	public List<CourseDTO> topCourse() {
 		return courseService.topCourse();
+	}
+
+	@GetMapping("my")
+	public List<CourseDTO> myCourse() {
+		return courseService.myCourse();
+	}
+
+	@GetMapping("by-id/{courseId}")
+	public CourseDTO findById(@PathVariable Long courseId) {
+		return courseService.findById(courseId);
 	}
 }
