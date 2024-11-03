@@ -15,6 +15,8 @@ import lombok.Setter;
 public class ModuleDTO {
 	private Long id;
     private String name;
-    CourseDTO courseDTO;
+    private Integer moduleNumber;
+    private String description;
+    Long courseId;
     List<VideoDTO> videos = new ArrayList<>();
 }

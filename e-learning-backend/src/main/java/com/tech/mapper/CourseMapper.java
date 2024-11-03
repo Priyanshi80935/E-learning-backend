@@ -11,8 +11,10 @@ import com.tech.dto.ModuleDTO;
 import com.tech.entity.Course;
 import com.tech.entity.Lecture;
 import com.tech.entity.ModuleEntity;
+import org.springframework.transaction.annotation.Transactional;
 
-@Component //Springboot will crearte a object
+@Component
+@Transactional
 public class CourseMapper {
 	@Autowired
 	private ModuleMapper moduleMapper;
@@ -22,7 +24,7 @@ public class CourseMapper {
 		courseDTO.setId(course.getId());
 		courseDTO.setName(course.getName());
 		courseDTO.setDescription(course.getDescription());
-		courseDTO.setDuration(course.getDescription());
+		courseDTO.setDuration(course.getDuration());
 		courseDTO.setImg(course.getImg());
 		if(course.getLecture() != null) {
 			courseDTO.setLectureId(course.getLecture().getId());
@@ -32,7 +34,7 @@ public class CourseMapper {
 		courseDTO.setPrice(course.getPrice());
 		courseDTO.setRatingCount(course.getRatingCount());
 		courseDTO.setRating(course.getRating());
-		
+
 		List<ModuleEntity> modules = course.getModules();
 		List<ModuleDTO> moduleDTOs = new ArrayList<>();
 		if(modules != null) {
@@ -51,7 +53,7 @@ public class CourseMapper {
 		course.setId(courseDTO.getId());
 		course.setName(courseDTO.getName());
 		course.setDescription(courseDTO.getDescription());
-		course.setDuration(courseDTO.getDescription());
+		course.setDuration(courseDTO.getDuration());
 		course.setImg(courseDTO.getImg());
 		if(courseDTO.getLectureId() != null) {
 			Long lectureId = courseDTO.getLectureId();

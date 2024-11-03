@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.tech.dto.CourseDTO;
@@ -28,11 +30,19 @@ public class CourseService {
 	public List<CourseDTO> findAll() {
 		List<Course> all = courseRepository.findAll();
 		List<CourseDTO> courseDTOs = new ArrayList<>();
-		//Satya task
 		for(Course course : all) {
 			courseDTOs.add(courseMapper.toDTO(course));
 		}
 		return courseDTOs;
 	}
 
+	public List<CourseDTO> topCourse() {
+		List<Course> all = courseRepository.findAll(PageRequest.of(0, 3, Sort.by(Sort.Direction.DESC, "rating"))).getContent();
+		List<CourseDTO> courseDTOs = new ArrayList<>();
+		for (Course course : all) {
+			courseDTOs.add(courseMapper.toDTO(course));
+		}
+		return courseDTOs;
+
+	}
 }

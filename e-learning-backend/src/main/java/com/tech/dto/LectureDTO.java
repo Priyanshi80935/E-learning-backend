@@ -12,4 +12,9 @@ import lombok.Setter;
 public class LectureDTO {
     private Long id;
     private String name;
+    private String designation;
+    private String profileImage;
+    private String facebook;
+    private String insta;
+    private String twiter;
 }

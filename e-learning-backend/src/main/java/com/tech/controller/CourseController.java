@@ -27,4 +27,9 @@ public class CourseController {
 	public CourseDTO save(@RequestBody CourseDTO course) {
 		return courseService.save(course);
 	}
+
+	@GetMapping("top-course")
+	public List<CourseDTO> topCourse() {
+		return courseService.topCourse();
+	}
 }

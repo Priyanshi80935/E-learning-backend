@@ -16,7 +16,11 @@ public class LectureMapper {
         LectureDTO lectureDTO = new LectureDTO();
         lectureDTO.setId(lecture.getId());
         lectureDTO.setName(lecture.getName());
-
+        lectureDTO.setDesignation(lecture.getDesignation());
+        lectureDTO.setProfileImage(lecture.getProfileImage());
+        lectureDTO.setInsta(lecture.getInsta());
+        lectureDTO.setTwiter(lecture.getTwiter());
+        lectureDTO.setFacebook(lecture.getFacebook());
         return lectureDTO;
     }
 
@@ -28,7 +32,11 @@ public class LectureMapper {
         Lecture lecture = new Lecture();
         lecture.setId(lectureDTO.getId());
         lecture.setName(lectureDTO.getName());
-
+        lecture.setDesignation(lectureDTO.getDesignation());
+        lecture.setProfileImage(lectureDTO.getProfileImage());
+        lecture.setInsta(lectureDTO.getInsta());
+        lecture.setTwiter(lectureDTO.getTwiter());
+        lecture.setFacebook(lectureDTO.getFacebook());
         return lecture;
     }
 }

@@ -1,10 +1,6 @@
 package com.tech.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,4 +14,14 @@ public class Lecture {
     private Long id;
     
     private String name;
+
+    private String designation;
+
+    @Lob
+    private String profileImage;
+
+    private String facebook;
+    private String insta;
+    private String twiter;
+
 }

@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -25,10 +26,11 @@ public class Course {
 	
 	@Column(name = "course_name", length = 100, nullable = true)
     private String name;
-	
+	@Lob
     private String description;
     private double price;
     private double rating;
+    @Lob
     private String img;
     private String duration;
     private int noOfStudents;

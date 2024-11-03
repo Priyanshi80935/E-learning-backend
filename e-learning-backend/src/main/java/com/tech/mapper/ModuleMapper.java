@@ -20,6 +20,8 @@ public class ModuleMapper {
 		ModuleDTO moduleDTO = new ModuleDTO();
 		moduleDTO.setId(module.getId());
 		moduleDTO.setName(module.getName());
+		moduleDTO.setModuleNumber(module.getModuleNumber());
+		moduleDTO.setDescription(module.getDescription());
 		
 		List<Video> videos = module.getVideos();
 		List<VideoDTO> videoDTOs = new ArrayList<>();
@@ -37,6 +39,8 @@ public class ModuleMapper {
 		ModuleEntity moduleEntity = new ModuleEntity();
 		moduleEntity.setId(moduleDTO.getId());
 		moduleEntity.setName(moduleDTO.getName());
+		moduleEntity.setDescription(moduleDTO.getDescription());
+		moduleEntity.setModuleNumber(moduleDTO.getModuleNumber());
 		List<VideoDTO> videoDTOs = moduleDTO.getVideos();
 		List<Video> videos = new ArrayList<>(); 
 		if(videoDTOs != null) {
