@@ -20,6 +20,5 @@ public class Video {
 
 	private Long videoNumber;
 
-	@Lob
-	private String content;
+	private String originalFileName;
 }

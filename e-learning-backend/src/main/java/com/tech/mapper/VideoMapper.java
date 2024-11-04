@@ -15,7 +15,7 @@ public class VideoMapper {
 		videoDTO.setName(video.getName());
 		videoDTO.setDescription(video.getDescription());
 		videoDTO.setVideoNumber(video.getVideoNumber());
-
+		videoDTO.setOriginalFileName(video.getOriginalFileName());
 		return videoDTO;
 	}
 	
@@ -25,7 +25,7 @@ public class VideoMapper {
 		video.setName(videoDTO.getName());
 		video.setDescription(videoDTO.getDescription());
 		video.setVideoNumber(videoDTO.getVideoNumber());
-		video.setContent(videoDTO.getContent());
+		video.setOriginalFileName(videoDTO.getOriginalFileName());
 		return video;
 	}
 }

@@ -17,4 +17,5 @@ public class VideoDTO {
     private String content;
     private Long videoNumber;
     private String description;
+    private String originalFileName;
 }

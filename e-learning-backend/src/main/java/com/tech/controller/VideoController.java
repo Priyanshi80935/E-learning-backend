@@ -1,10 +1,13 @@
 package com.tech.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.tech.dto.VideoDTO;
 import com.tech.service.VideoService;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -13,12 +16,13 @@ import java.util.List;
 public class VideoController {
 	@Autowired
 	private VideoService videoService;
-	
-	
+
+
 	@PostMapping
-	public VideoDTO save(@RequestBody VideoDTO  videoDTO) {
-		
-		return videoService.save(videoDTO);
+	public VideoDTO save(
+			@RequestPart("video") VideoDTO videoDTO,
+			@RequestPart("file") MultipartFile file) {
+		return videoService.save(videoDTO, file);
 	}
 
 	@GetMapping(value = "{moduleId}")
@@ -27,7 +31,7 @@ public class VideoController {
 	}
 
 	@GetMapping(value = "find-by-id/{videoId}")
-	public VideoDTO findById(@PathVariable Long videoId) {
+	public ResponseEntity<InputStreamResource> findById(@PathVariable Long videoId) {
 		return videoService.findById(videoId);
 	}
 }
