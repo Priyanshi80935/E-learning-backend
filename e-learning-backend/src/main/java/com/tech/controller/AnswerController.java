@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.*;
 import com.tech.dto.AnswerDTO;
 import com.tech.service.AnswerService;
 
-@RestController
-@RequestMapping(value = "/api/answer")
+@RestController//basically  handle request by user
+@RequestMapping(value = "/api/answer")//url
 public class AnswerController {
     @Autowired
     private AnswerService answerService;
 
     @PostMapping
-    public AnswerDTO save(@RequestBody AnswerDTO answerDTO) {
+    public AnswerDTO save(@RequestBody AnswerDTO answerDTO) {//url map
         return answerService.save(answerDTO);
     }
 }

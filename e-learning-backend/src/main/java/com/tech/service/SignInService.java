@@ -11,7 +11,7 @@ import com.tech.entity.SignIn;
 import com.tech.mapper.SignInMapper;
 import com.tech.repository.SignInRepository;
 
-@Service  // Spring will create an object of this service
+@Service  // Spring will create an object of this service//used as directly inject to controller
 public class SignInService {
     
     @Autowired // Spring will inject the SignInRepository dependency
